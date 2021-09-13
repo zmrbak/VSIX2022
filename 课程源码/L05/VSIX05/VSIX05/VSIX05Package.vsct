@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<!--  This is the file that defines the actual layout and type of the commands.
+		这个文件定义了命令的实际布局和类型。
+		
+        It is divided in different sections (e.g. command definition, command
+        placement, ...), with each defining a specific set of properties.
+		它分为不同的部分(例如命令定义、命令布局、 ...) ，每个部分定义一组特定的属性。
+		
+        See the comment before each section for more details about how to
+        use it. 
+		请参阅每个部分之前的注释，了解更多关于如何使用它的细节。
+		-->
+
+	<!--  The VSCT compiler (the tool that translates this file into the binary
+        format that VisualStudio will consume) has the ability to run a preprocessor
+        on the vsct file; 
+		VSCT编译器(将该文件转换为VisualStudio使用的二进制格式的工具)能够对vsct文件运行预处理器; 
+		
+		this preprocessor is (usually) the C++ preprocessor,
+		该预处理器(通常)是C++预处理器
+		
+		so it is possible to define includes and macros with the same syntax used
+        in C++ files. 
+		因此可以使用与C++文件相同的语法定义include和宏
+		
+		Using this ability of the compiler here, we include some files
+        defining some of the constants that we will use inside the file.
+		用这个编译器的能力，我们包含了一些文件，定义了一些我们将在文件中使用的常量。
+		-->
+
+	<!--This is the file that defines the IDs for all the commands exposed by VisualStudio.
+		这个文件定义了VisualStudio公开的所有命令的id
+	-->
+	<Extern href="stdidcmd.h" />
+
+	<!--This header contains the command ids for the menus provided by the shell.
+		这个头文件包含了shell提供的菜单的命令id
+	-->
+	<Extern href="vsshlids.h" />
+
+	<!--The Commands section is where commands, menus, and menu groups are defined.
+		Commands部分用于定义命令、菜单和菜单组
+		
+      This section uses a Guid to identify the package that provides the command defined inside it.
+	  这一节使用Guid标识里面提供命令定义的包
+	  -->
+	<Commands package="guidVSIX05Package">
+		<!-- Inside this section we have different sub-sections: 
+			在这一部分中，有不同的子部分:
+			
+		one for the menus, another for the menu groups, one for the buttons (the actual commands), one for the combos
+    and the last one for the bitmaps used.
+		一个用于菜单，另一个用于菜单组，一个用于按钮(实际命令) ，一个用于组合，最后一个用于位图。
+		
+	Each element is identified by a command id 
+		每个元素都由一个命令 id 标识
+		
+	that is a unique pair of guid and numeric identifier; 
+		该命令id 是唯一的一对guid和数字标识符。
+		
+	the guid part of the identifier is usually
+    called "command set" and is used to group different command inside a logically related
+    group; 
+		标识符的guid部分通常称为“命令集” ，用于在逻辑相关的组中对不同的命令进行分组。
+		
+	your package should define its own command set in order to avoid collisions
+    with command ids defined by other packages. 
+		您的包应该定义自己的命令集，以避免与其他包定义的命令 id 发生冲突。
+	-->
+
+		<!-- In this section you can define new menu groups.
+			在这部分你可以定义新的菜单组。
+		A menu group is a container for
+         other menus or buttons (commands);
+			菜单组是其他菜单或按钮(命令)的容器;
+			
+		 from a visual point of view you can see the
+         group as the part of a menu contained between two lines. 
+			从视觉角度来看，可以将该组视为包含在两行之间的菜单的一部分。
+			
+		 The parent of a group
+         must be a menu.
+			组的Parent必须是一个菜单。
+		 -->
+		<Groups>
+			<Group guid="guidVSIX05PackageCmdSet" id="MyMenuGroup" priority="0x0600">
+				<Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_FILE" />
+			</Group>
+		</Groups>
+
+		<!--Buttons section. -->
+		<!--This section defines the elements the user can interact with, like a menu command or a button
+        or combo box in a toolbar.
+			本节定义用户可以与之交互的元素，如菜单命令或工具栏中的按钮或组合框。
+		-->
+		<Buttons>
+			<!--To define a menu group you have to specify its ID, the parent menu and its display priority.
+			要定义一个菜单组，你必须指定它的 id，父菜单和它的显示优先级。
+			
+          The command is visible and enabled by default.
+		  该命令是可见的，默认情况下是启用的。
+		  
+		  If you need to change the visibility, status, etc, you can use
+          the CommandFlag node.
+		  如果需要更改可见性、状态等，可以使用CommandFlag节点。
+		  
+          You can add more than one CommandFlag node e.g.:
+              <CommandFlag>DefaultInvisible</CommandFlag>
+              <CommandFlag>DynamicVisibility</CommandFlag>
+          If you do not want an image next to your command, remove the Icon node 
+			如果不希望命令旁边有图像，移除Icon节点
+		  -->
+			<Button guid="guidVSIX05PackageCmdSet" id="Command1Id" priority="0x0100" type="Button">
+				<Parent guid="guidVSIX05PackageCmdSet" id="MyMenuGroup" />
+				<Icon guid="guidImages" id="bmpPicX" />
+				<Strings>
+					<ButtonText>执行命令</ButtonText>
+				</Strings>
+			</Button>
+			<Button guid="guidVSIX05PackageCmdSet" id="cmdidCommand2" priority="0x0100" type="Button">
+				<Parent guid="guidVSIX05PackageCmdSet" id="MyMenuGroup" />
+				<Icon guid="guidImages1" id="bmpPic1" />
+				<Strings>
+					<ButtonText>再执行命令</ButtonText>
+				</Strings>
+			</Button>
+		</Buttons>
+
+		<!--The bitmaps section is used to define the bitmaps that are used for the commands.
+			位图部分用于定义用于命令的位图
+		-->
+		<Bitmaps>
+			<!--  The bitmap id is defined in a way that is a little bit different from the others:
+			位图 id 的定义方式与其他元素稍有不同:
+			
+            the declaration starts with a guid for the bitmap strip, then there is the resource id of the
+            bitmap strip containing the bitmaps and then there are the numeric ids of the elements used
+            inside a button definition. 
+			声明以位图条的 guid 开始，然后是包含位图条的位图条的资源id，然后是按钮定义中使用的元素的数字id。
+			
+			An important aspect of this declaration is that the element id
+            must be the actual index (1-based) of the bitmap inside the bitmap strip.
+			此声明的一个重要方面是元素 id 必须是位图条带内部位图的实际索引(基于1)			
+			-->
+			<Bitmap guid="guidImages" href="Resources\Command1.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+			<Bitmap guid="guidImages1" href="Resources\Command2.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+		</Bitmaps>
+	</Commands>
+
+	<Symbols>
+		<!-- This is the package guid. -->
+		<GuidSymbol name="guidVSIX05Package" value="{a4d588d5-c66b-40bd-85f1-fedb263b7b52}" />
+
+		<!-- This is the guid used to group the menu commands together 
+			用来将菜单命令分组的guid
+		-->
+		<GuidSymbol name="guidVSIX05PackageCmdSet" value="{2bcd97eb-92e9-4b91-90c2-e138d28386bb}">
+			<IDSymbol name="MyMenuGroup" value="0x1020" />
+			<IDSymbol name="Command1Id" value="0x0100" />
+			<IDSymbol value="4129" name="cmdidCommand2" />
+		</GuidSymbol>
+
+		<GuidSymbol name="guidImages" value="{5c2a1fee-5b93-4795-863e-35c65c2557bf}">
+			<IDSymbol name="bmpPic1" value="1" />
+			<IDSymbol name="bmpPic2" value="2" />
+			<IDSymbol name="bmpPicSearch" value="3" />
+			<IDSymbol name="bmpPicX" value="4" />
+			<IDSymbol name="bmpPicArrows" value="5" />
+			<IDSymbol name="bmpPicStrikethrough" value="6" />
+		</GuidSymbol>
+
+		<GuidSymbol value="{d669a780-3e9b-4e3a-9189-aa8ed7a2aa67}" name="guidImages1">
+			<IDSymbol name="bmpPic1" value="1" />
+			<IDSymbol name="bmpPic2" value="2" />
+			<IDSymbol name="bmpPicSearch" value="3" />
+			<IDSymbol name="bmpPicX" value="4" />
+			<IDSymbol name="bmpPicArrows" value="5" />
+			<IDSymbol name="bmpPicStrikethrough" value="6" />
+		</GuidSymbol>
+	</Symbols>
+</CommandTable>
