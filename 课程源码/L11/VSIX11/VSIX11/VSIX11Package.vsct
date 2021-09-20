@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<Extern href="stdidcmd.h"/>
+
+	<Extern href="vsshlids.h"/>
+	<Include href="KnownImageIds.vsct"/>
+
+	<Commands package="guidVSIX11Package">
+		<Groups>
+			<Group guid="guidVSIX11PackageCmdSet" id="MyMenuGroup" priority="0x0600">
+				<Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
+			</Group>
+		</Groups>
+
+		<Buttons>
+			<Button guid="guidVSIX11PackageCmdSet" id="Command1Id" priority="0x0100" type="Button">
+				<Parent guid="guidVSIX11PackageCmdSet" id="MyMenuGroup" />
+				<Icon guid="ImageCatalogGuid" id="Action" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>VSXI11.1 Command</ButtonText>
+				</Strings>
+			</Button>
+		</Buttons>
+
+		<Bitmaps>
+			<Bitmap guid="guidImages" href="Resources\Command1.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough"/>
+		</Bitmaps>
+	</Commands>
+
+	<Symbols>
+		<GuidSymbol name="guidVSIX11Package" value="{D586908B-9380-484F-9348-47D8BE2A63C8}" />
+
+		<GuidSymbol name="guidVSIX11PackageCmdSet" value="{99e63284-c65c-4cb8-b2bf-013a40cb998f}">
+			<IDSymbol name="MyMenuGroup" value="0x1020" />
+			<IDSymbol name="Command1Id" value="0x0100" />
+		</GuidSymbol>
+
+		<GuidSymbol name="guidImages" value="{9c766b46-8207-468c-a1fe-7fdf851ba3fc}" >
+			<IDSymbol name="bmpPic1" value="1" />
+			<IDSymbol name="bmpPic2" value="2" />
+			<IDSymbol name="bmpPicSearch" value="3" />
+			<IDSymbol name="bmpPicX" value="4" />
+			<IDSymbol name="bmpPicArrows" value="5" />
+			<IDSymbol name="bmpPicStrikethrough" value="6" />
+		</GuidSymbol>
+	</Symbols>
+</CommandTable>
