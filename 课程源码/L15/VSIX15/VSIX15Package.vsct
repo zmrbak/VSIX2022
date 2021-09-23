@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<Extern href="stdidcmd.h" />
+
+	<Extern href="vsshlids.h" />
+
+	<Commands package="guidVSIX15Package">
+		<Groups>
+			<Group guid="guidVSIX15PackageCmdSet" id="MyMenuGroup" priority="0x0600">
+				<Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />
+			</Group>
+			<Group guid="guidVSIX15PackageCmdSet" id="MyMenuGroup1" priority="0x0500">
+				<Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />
+			</Group>
+		</Groups>
+
+		<Buttons>
+			<Button guid="guidVSIX15PackageCmdSet" id="Command1Id" priority="0x0200" type="Button">
+				<Parent guid="guidVSIX15PackageCmdSet" id="MyMenuGroup" />
+				<Strings>
+					<ButtonText>Invoke Command1</ButtonText>
+				</Strings>
+			</Button>
+			<Button guid="guidVSIX15PackageCmdSet" id="cmdidCommand2" priority="0x0100" type="Button">
+				<Parent guid="guidVSIX15PackageCmdSet" id="MyMenuGroup" />
+				<Strings>
+					<ButtonText>Invoke Command2</ButtonText>
+				</Strings>
+			</Button>
+			
+			<Button guid="guidVSIX15PackageCmdSet" id="cmdidCommand3" priority="0x0100" type="Button">
+				<Parent guid="guidVSIX15PackageCmdSet" id="MyMenuGroup1" />
+				<Strings>
+					<ButtonText>Invoke Command3</ButtonText>
+				</Strings>
+			</Button>
+			<Button guid="guidVSIX15PackageCmdSet" id="cmdidCommand4" priority="0x0100" type="Button">
+				<Parent guid="guidVSIX15PackageCmdSet" id="MyMenuGroup1" />
+				<Strings>
+					<ButtonText>Invoke Command4</ButtonText>
+				</Strings>
+			</Button>
+			
+		</Buttons>
+
+	</Commands>
+
+	<Symbols>
+		<GuidSymbol name="guidVSIX15Package" value="{a3b38abb-6000-4dc6-91b3-925ff57799dd}" />
+
+		<GuidSymbol name="guidVSIX15PackageCmdSet" value="{9a9f54d2-caca-4df5-b9c2-afedd6b99890}">
+			<IDSymbol name="MyMenuGroup" value="0x1020" />
+			<IDSymbol name="Command1Id" value="0x0100" />
+			<IDSymbol name="cmdidCommand2" value="0x1021"/>
+
+			<IDSymbol name="MyMenuGroup1" value="0x1234"/>
+			<IDSymbol name="cmdidCommand3" value="0x1022"/>
+			<IDSymbol name="cmdidCommand4" value="0x1023"/>
+		</GuidSymbol>
+
+	</Symbols>
+</CommandTable>
