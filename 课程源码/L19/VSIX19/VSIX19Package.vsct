@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<Extern href="stdidcmd.h"/>
+
+	<Extern href="vsshlids.h"/>
+
+	<Commands package="guidVSIX19Package">
+		<Groups>
+			<Group guid="guidVSIX19PackageCmdSet" id="MyMenuGroup" priority="0x0600">
+				<Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
+			</Group>
+			<Group guid="guidVSIX19PackageCmdSet" id="MRUGroup" priority="0x0600">
+				<Parent guid="guidVSIX19PackageCmdSet" id="MyMenu"/>
+			</Group>
+		</Groups>
+
+		<Buttons>
+			<Button guid="guidVSIX19PackageCmdSet" id="Command1Id" priority="0x0100" type="Button">
+				<Parent guid="guidVSIX19PackageCmdSet" id="MRUGroup" />
+				<CommandFlag>DynamicItemStart</CommandFlag>
+				<Strings>
+					<ButtonText></ButtonText>
+				</Strings>
+			</Button>
+		</Buttons>
+
+		<Menus>
+			<Menu guid="guidVSIX19PackageCmdSet" id="MyMenu" priority="100" type="Menu">
+				<Parent guid="guidVSIX19PackageCmdSet" id="MyMenuGroup"/>
+				<Strings>
+					<ButtonText>动态菜单</ButtonText>
+				</Strings>
+			</Menu>
+		</Menus>
+
+	</Commands>
+
+	<Symbols>
+		<GuidSymbol name="guidVSIX19Package" value="{c3a3981e-5dd1-48b2-b0c9-66c3ca41f3a9}" />
+
+		<GuidSymbol name="guidVSIX19PackageCmdSet" value="{42157b7b-bce8-43fd-ab56-49dbc3cabdf6}">
+			<IDSymbol name="MyMenuGroup" value="0x1020" />
+			<IDSymbol name="Command1Id" value="0x0200" />
+			<IDSymbol name="MyMenu" value="0x0101" />
+			<IDSymbol name="MRUGroup" value="0x0102" />
+		</GuidSymbol>
+
+	</Symbols>
+</CommandTable>
