@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<Extern href="stdidcmd.h"/>
+	<Extern href="vsshlids.h"/>
+
+	<Commands package="guidVSIX17Package">
+		<Groups>
+			<Group guid="guidVSIX17PackageCmdSet" id="MyMenuGroup" priority="0x0600">
+				<Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
+			</Group>
+
+			<Group guid="guidVSIX17PackageCmdSet" id="MyMenuGroup_1" priority="0x0600">
+				<Parent guid="guidVSIX17PackageCmdSet" id="MyMenu"/>
+			</Group>
+
+			<Group guid="guidVSIX17PackageCmdSet" id="MyMenuGroup_2" priority="0x0600">
+				<Parent guid="guidVSIX17PackageCmdSet" id="MyMenu1"/>
+			</Group>
+		</Groups>
+
+		<Buttons>
+			<Button guid="guidVSIX17PackageCmdSet" id="Command1Id" priority="0x0100" type="Button">
+				<Parent guid="guidVSIX17PackageCmdSet" id="MyMenuGroup" />
+				<Strings>
+					<ButtonText>Invoke Command1</ButtonText>
+				</Strings>
+			</Button>
+			<Button guid="guidVSIX17PackageCmdSet" id="Command1Id_1" priority="0x0100" type="Button">
+				<Parent guid="guidVSIX17PackageCmdSet" id="MyMenuGroup" />
+				<Strings>
+					<ButtonText>Invoke Command1Id_1</ButtonText>
+				</Strings>
+			</Button>
+
+			<Button guid="guidVSIX17PackageCmdSet" id="Command1Id_2" priority="0x0100" type="Button">
+				<Parent guid="guidVSIX17PackageCmdSet" id="MyMenuGroup_1" />
+				<Strings>
+					<ButtonText>Invoke Command1Id_2</ButtonText>
+				</Strings>
+			</Button>
+			<Button guid="guidVSIX17PackageCmdSet" id="Command1Id_3" priority="0x0100" type="Button">
+				<Parent guid="guidVSIX17PackageCmdSet" id="MyMenuGroup_1" />
+				<Strings>
+					<ButtonText>Invoke Command1Id_2</ButtonText>
+				</Strings>
+			</Button>
+			<Button guid="guidVSIX17PackageCmdSet" id="Command1Id_4" priority="0x0100" type="Button">
+				<Parent guid="guidVSIX17PackageCmdSet" id="MyMenuGroup_1" />
+				<Strings>
+					<ButtonText>Invoke Command1Id_2</ButtonText>
+				</Strings>
+			</Button>
+			<Button guid="guidVSIX17PackageCmdSet" id="Command1Id_5" priority="0x0100" type="Button">
+				<Parent guid="guidVSIX17PackageCmdSet" id="MyMenuGroup_2" />
+				<Strings>
+					<ButtonText>Invoke Command1Id_5</ButtonText>
+				</Strings>
+			</Button>
+		</Buttons>
+
+		<Menus>
+			<Menu guid="guidVSIX17PackageCmdSet" id="MyMenu" priority="100" type="Menu">
+				<Parent guid="guidVSIX17PackageCmdSet" id="MyMenuGroup"/>
+				<Strings>
+					<ButtonText>string</ButtonText>
+				</Strings>
+			</Menu>
+
+			<Menu guid="guidVSIX17PackageCmdSet" id="MyMenu1" priority="100" type="Menu">
+				<Parent guid="guidVSIX17PackageCmdSet" id="MyMenuGroup_1"/>
+				<Strings>
+					<ButtonText>string</ButtonText>
+				</Strings>
+			</Menu>
+		</Menus>
+
+	</Commands>
+
+	<Symbols>
+		<GuidSymbol name="guidVSIX17Package" value="{1d7d77bc-f35a-49f6-843b-e38c3aca77e9}" />
+
+		<GuidSymbol name="guidVSIX17PackageCmdSet" value="{49e98d96-12e7-4f0d-bddf-71a6cdd02743}">
+			<IDSymbol name="MyMenuGroup" value="0x1020" />
+			<IDSymbol name="Command1Id" value="0x0100" />
+			<IDSymbol name="Command1Id_1" value="0x0123"/>
+			<IDSymbol name="MyMenu" value="0x0124"/>
+			<IDSymbol name="MyMenuGroup_1" value="0x0125"/>
+			<IDSymbol name="Command1Id_2" value="0x0126"/>
+			<IDSymbol name="Command1Id_3" value="0x0127"/>
+			<IDSymbol name="Command1Id_4" value="0x0128"/>
+			<IDSymbol name="MyMenu1" value="0x0129"/>
+			<IDSymbol name="MyMenuGroup_2" value="0x0130"/>
+			<IDSymbol name="Command1Id_5" value="0x0131"/>
+
+		</GuidSymbol>
+
+	</Symbols>
+</CommandTable>
