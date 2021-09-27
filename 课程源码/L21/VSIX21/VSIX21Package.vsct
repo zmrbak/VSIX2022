@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<Extern href="stdidcmd.h" />
+
+	<Extern href="vsshlids.h" />
+
+	<Commands package="guidVSIX21Package">
+		<Groups>
+			<Group guid="guidVSIX21PackageCmdSet" id="MyMenuGroup" priority="0x0600">
+				<Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />
+			</Group>
+		</Groups>
+
+		<Buttons>
+			<Button guid="guidVSIX21PackageCmdSet" id="Command1Id" priority="0x0100" type="Button">
+				<Parent guid="guidVSIX21PackageCmdSet" id="MyMenuGroup" />
+				<CommandFlag>TextChanges</CommandFlag>
+				<Strings>
+					<ButtonText>VSIX21 Invoke Command1</ButtonText>
+				</Strings>
+			</Button>
+			<Button guid="guidVSIX21PackageCmdSet" id="cmdidCommand2" priority="0x0100" type="Button">
+				<Parent guid="guidVSIX21PackageCmdSet" id="MyMenuGroup" />
+				<CommandFlag>TextChanges</CommandFlag>
+				<Strings>
+					<ButtonText>VSIX21 Invoke Command2</ButtonText>
+				</Strings>
+			</Button>
+		</Buttons>
+
+	</Commands>
+
+	<Symbols>
+		<GuidSymbol name="guidVSIX21Package" value="{59534696-90fe-463d-a838-64b8c241c306}" />
+
+		<GuidSymbol name="guidVSIX21PackageCmdSet" value="{b8e59dbf-c048-4017-a631-b154a6e4074e}">
+			<IDSymbol name="MyMenuGroup" value="0x1020" />
+			<IDSymbol name="Command1Id" value="0x0100" />
+			<IDSymbol value="4129" name="cmdidCommand2" />
+		</GuidSymbol>
+
+	</Symbols>
+</CommandTable>
