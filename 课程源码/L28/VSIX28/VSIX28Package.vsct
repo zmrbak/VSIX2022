@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<Extern href="stdidcmd.h" />
+	<Extern href="vsshlids.h" />
+
+	<Commands package="guidVSIX28Package">
+		<Groups>
+			<Group guid="guidVSIX28PackageCmdSet" id="MyMenuGroup" priority="0x0600">
+				<Parent guid="guidVSIX28PackageCmdSet" id="MyMenu" />
+			</Group>
+		</Groups>
+
+		<Buttons>
+			<Button guid="guidVSIX28PackageCmdSet" id="Command1Id" priority="0x0100" type="Button">
+				<Parent guid="guidVSIX28PackageCmdSet" id="MyMenuGroup" />
+				<Icon guid="guidImages" id="bmpPicX" />
+				<Strings>
+					<ButtonText>VSIX28 Invoke Command1</ButtonText>
+				</Strings>
+			</Button>
+
+			<Button guid="guidVSIX28PackageCmdSet" id="Command1Id2" priority="0x0100" type="Button">
+				<Parent guid="guidVSIX28PackageCmdSet" id="MyMenuGroup" />
+				<Icon guid="guidImages" id="bmpPic1" />
+				<Strings>
+					<ButtonText>VSIX28 Invoke Command1</ButtonText>
+				</Strings>
+			</Button>
+			<Button guid="guidVSIX28PackageCmdSet" id="Command1Id3" priority="0x0100" type="Button">
+				<Parent guid="guidVSIX28PackageCmdSet" id="MyMenuGroup" />
+				<Icon guid="guidImages" id="bmpPic2" />
+				<Strings>
+					<ButtonText>VSIX28 Invoke Command1</ButtonText>
+				</Strings>
+			</Button>
+			<Button guid="guidVSIX28PackageCmdSet" id="Command1Id4" priority="0x0100" type="Button">
+				<Parent guid="guidVSIX28PackageCmdSet" id="MyMenuGroup" />
+				<Icon guid="guidImages" id="bmpPicSearch" />
+				<Strings>
+					<ButtonText>VSIX28 Invoke Command1</ButtonText>
+				</Strings>
+			</Button>
+
+			<Button guid="guidVSIX28PackageCmdSet" id="cmdidToolWindow1Command" priority="0x0100" type="Button">
+				<Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1" />
+				<Icon guid="guidImages1" id="bmpPic1" />
+				<Strings>
+					<ButtonText>VSIX28 ToolWindow1</ButtonText>
+				</Strings>
+			</Button>
+		</Buttons>
+		<Menus>
+			<Menu guid="guidVSIX28PackageCmdSet" id="MyMenu" priority="100" type="ToolWindowToolbar">
+				<CommandFlag>DefaultDocked</CommandFlag>
+				<Strings>
+					<ButtonText>测试 Toolbar</ButtonText>
+					<CommandName>测试 Toolbar</CommandName>
+				</Strings>
+			</Menu>
+		</Menus>
+
+		<Bitmaps>
+			<Bitmap guid="guidImages" href="Resources\Command1.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+			<Bitmap guid="guidImages1" href="Resources\ToolWindow1Command.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+		</Bitmaps>
+	</Commands>
+
+	<Symbols>
+		<GuidSymbol name="guidVSIX28Package" value="{66f98492-8b94-48d7-8a24-b63410f5bb04}" />
+
+		<GuidSymbol name="guidVSIX28PackageCmdSet" value="{4ba44c83-504d-4b54-bfd3-27f478562ab3}">
+			<IDSymbol name="MyMenuGroup" value="0x1020" />
+			<IDSymbol name="Command1Id" value="0x0100" />
+			<IDSymbol value="4129" name="cmdidToolWindow1Command" />
+			<IDSymbol name="MyMenu" value="0x0101" />
+			<IDSymbol name="Command1Id2" value="0x0102" />
+			<IDSymbol name="Command1Id3" value="0x0103" />
+			<IDSymbol name="Command1Id4" value="0x0104" />
+
+		</GuidSymbol>
+
+		<GuidSymbol name="guidImages" value="{1a721fc7-7a8c-4dac-9a4c-89efb6fd504e}">
+			<IDSymbol name="bmpPic1" value="1" />
+			<IDSymbol name="bmpPic2" value="2" />
+			<IDSymbol name="bmpPicSearch" value="3" />
+			<IDSymbol name="bmpPicX" value="4" />
+			<IDSymbol name="bmpPicArrows" value="5" />
+			<IDSymbol name="bmpPicStrikethrough" value="6" />
+		</GuidSymbol>
+
+		<GuidSymbol value="{4557b8cf-df76-4e6e-8607-40daa6fe72c1}" name="guidImages1">
+			<IDSymbol name="bmpPic1" value="1" />
+			<IDSymbol name="bmpPic2" value="2" />
+			<IDSymbol name="bmpPicSearch" value="3" />
+			<IDSymbol name="bmpPicX" value="4" />
+			<IDSymbol name="bmpPicArrows" value="5" />
+			<IDSymbol name="bmpPicStrikethrough" value="6" />
+		</GuidSymbol>
+	</Symbols>
+</CommandTable>

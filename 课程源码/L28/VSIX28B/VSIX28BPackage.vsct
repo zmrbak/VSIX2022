@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h" />
+
+  <Extern href="vsshlids.h" />
+
+  <Commands package="guidVSIX28BPackage">
+    <Buttons>
+      <Button guid="guidVSIX28BPackageCmdSet" id="ToolWindow1CommandId" priority="0x0100" type="Button">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1" />
+        <Icon guid="guidImages" id="bmpPic1" />
+        <Strings>
+          <ButtonText>ToolWindow1</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidVSIX28BPackageCmdSet1" id="cmdidCommand1" priority="0x0100" type="Button">
+        <Parent guid="guidVSIX28BPackageCmdSet1" id="MyMenuGroup" />
+        <Icon guid="guidImages1" id="bmpPic1" />
+        <Strings>
+          <ButtonText>Invoke Command1</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+
+    <Bitmaps>
+      <Bitmap guid="guidImages" href="Resources\ToolWindow1Command.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+      <Bitmap guid="guidImages1" href="Resources\Command1.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+    </Bitmaps>
+    <Groups>
+      <Group guid="guidVSIX28BPackageCmdSet1" id="MyMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />
+      </Group>
+    </Groups>
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="guidVSIX28BPackage" value="{63e96862-2afa-486c-b92a-64c7e792edf6}" />
+
+    <GuidSymbol name="guidVSIX28BPackageCmdSet" value="{66d9e7c9-5554-4555-b044-8a6acd874331}">
+      <IDSymbol name="ToolWindow1CommandId" value="0x0100" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImages" value="{7c40b9e2-b307-430a-8bc4-fab5d4acc09d}">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{321e3010-0b4a-49c8-9fdd-405adf0b330c}" name="guidVSIX28BPackageCmdSet1">
+      <IDSymbol value="4128" name="MyMenuGroup" />
+      <IDSymbol value="256" name="cmdidCommand1" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{fb63109f-1a9b-473a-8349-9913364f1a4f}" name="guidImages1">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
