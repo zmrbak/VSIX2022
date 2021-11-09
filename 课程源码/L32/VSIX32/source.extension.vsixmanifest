@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="VSIX32.2e39cfdf-3b96-409b-a983-b6c0b14ca9a7" Version="1.0" Language="en-US" Publisher="Zmrbak" />
+    <Identity Id="VSIX32.4fd7cbfe-9379-4b1c-acf7-4a6cb1e3634b" Version="1.0" Language="en-US" Publisher="Zmrbak" />
     <DisplayName>VSIX32</DisplayName>
     <Description>Empty VSIX Project.</Description>
   </Metadata>
